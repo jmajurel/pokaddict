@@ -1,0 +1,24 @@
+{
+  "name": "pokaddict",
+  "version": "1.0.0",
+  "description": "web app consumer of pokapi",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jmajurel/pokaddict.git"
+  },
+  "author": "JFM",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jmajurel/pokaddict/issues"
+  },
+  "homepage": "https://github.com/jmajurel/pokaddict#readme",
+  "dependencies": {
+    "express": "^4.16.3",
+    "pug": "^2.0.3",
+    "request": "^2.85.0"
+  }
+}

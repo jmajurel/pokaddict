@@ -1,0 +1,15 @@
+a.header {
+  text-transform: capitalize;
+}
+
+.container {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.ui.card {
+  margin: 5px;
+}
