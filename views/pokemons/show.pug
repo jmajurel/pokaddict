@@ -1,7 +1,25 @@
 html
-  include includes/head.pug 
-  body
-    .container
-      
+  include ../includes/head.pug
+  .container
+    .ui.card
+      .image
+        img(src=pokemon.picture)
+      .content
+        a.header(href=url + pokemon._id)=pokemon.name
+        .meta
+          span=pokemon.type
+        ul.description
+          li Ability: 
+            =pokemon.ability
+          li Weakness: 
+            =pokemon.weakness
+          li Height: 
+            =pokemon.height
 
-  include includes/footer.pug
+        if pokemon.evolution
+          .extra.content
+            each evol in pokemon.evolution
+              a(href=url + evol.id)
+                =evol.name
+         
+  include ../includes/footer.pug 

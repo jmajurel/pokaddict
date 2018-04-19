@@ -1,12 +1,11 @@
 html
-  include includes/head.pug
-  body
-    .container
-      each pokemon in pokemons
-        .ui.card
-          .image
-            img(src=pokemon.picture)
-          .content
-            a.header(href=url + '/pokemons/' + pokemon._id)=pokemon.name
+  include ../includes/head.pug
+  .container
+    each pokemon in pokemons
+      .ui.card
+        .image
+          img(src=pokemon.picture)
+        .content
+          a.header(href=url + '/' + pokemon._id)=pokemon.name
 
-  include includes/footer.pug 
+  include ../includes/footer.pug 

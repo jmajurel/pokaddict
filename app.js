@@ -10,6 +10,9 @@ app.use(express.static(__dirname + "/views"));
 app.set('view engine', 'pug');
 
 app.use('/pokemons', pokemonsRouter);
+app.get('/', function(req, res){
+  res.render('welcome');
+});
 
 app.listen(port);
 

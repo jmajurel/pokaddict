@@ -3,18 +3,19 @@ var request = require('request');
 
 var router = express.Router();
 
-var url = 'http://localhost:3000/api/pokemons/';
+const apiurl = 'http://localhost:3000/api/pokemons/';
+const appurl = 'http://localhost:8080/pokemons/';
 
 router.get('/', function(req, res){
-  request.get(url)
+
+  request.get(apiurl)
     .on('response', function(response){
       if(response.statusCode !== 200){
 	console.log("wrong statusCode!");
       } else {
 	response.on('data', function(data){
 	  var pokemons = JSON.parse(data);
-	  console.log(pokemons);
-          res.render('index', {pokemons: pokemons, url: url});
+          res.render('./pokemons/index', {pokemons: pokemons, url: appurl});
 	});
       }
     })
@@ -24,22 +25,21 @@ router.get('/', function(req, res){
 });
 
 router.get('/:id', function(req, res){
-  request.get(url + req.params.id)
+
+  request.get(apiurl + req.params.id)
     .on('response', function(response){
       if(response.statusCode !== 200){
 	console.log("wrong statusCode!");
       } else {
 	response.on('data', function(data){
 	  var pokemon = JSON.parse(data);
-          res.render('show', {pokemon: pokemon});
+          res.render('./pokemons/show', {pokemon: pokemon, url: appurl});
 	});
       }
     })
     .on('error', function(error){
       console.log(err);
     })
-
-
 });
 
 module.exports = router;
