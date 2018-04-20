@@ -1,0 +1,50 @@
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  width: 100vw;
+}
+.red {
+  position: absolute;
+  width: 100%;
+  height: 65%;
+  z-index: -1;
+  background-color: red;
+}
+
+.outer {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  margin: -100px 0px 0px -100px;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: black 60px solid;
+  background-color: white;
+}
+
+.inner {
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  border: black 5px solid;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  margin: -35px 0px 0px -35px;
+}
+
+hr {
+  position: absolute;
+  top: 50%;
+  height: 50px;
+  margin: -25px 0px 0px -25px;
+  background-color: black;
+  width: 45%;
+  border: 0;
+}
+
+hr.right {
+  right: 0;
+}
