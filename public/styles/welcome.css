@@ -22,6 +22,7 @@ body {
   border-radius: 50%;
   border: black 60px solid;
   background-color: white;
+  box-shadow: 1px 5px 3px rgba(0, 0, 0, 0.6);
 }
 
 .inner {
@@ -33,6 +34,7 @@ body {
   top: 50%;
   left: 50%;
   margin: -35px 0px 0px -35px;
+  box-shadow: 1px 2px 1px rgba(0, 0, 0, 0.6);
 }
 
 hr {
@@ -43,6 +45,7 @@ hr {
   background-color: black;
   width: 45%;
   border: 0;
+  box-shadow: 0 3px 2px rgba(0, 0, 0, 0.5);
 }
 
 hr.right {

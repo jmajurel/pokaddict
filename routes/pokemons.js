@@ -6,6 +6,7 @@ var router = express.Router();
 const apiurl = 'http://localhost:3000/api/pokemons/';
 const appurl = 'http://localhost:8080/pokemons/';
 
+//Index route
 router.get('/', function(req, res){
 
   request.get(apiurl)
@@ -24,6 +25,16 @@ router.get('/', function(req, res){
     })
 });
 
+//New Route
+router.get("/new", function(req, res){
+  res.render("./pokemons/new");
+});
+
+router.post("/", function(req, res){
+  console.log(req.body.pokemon);
+});
+
+//Show Route
 router.get('/:id', function(req, res){
 
   request.get(apiurl + req.params.id)

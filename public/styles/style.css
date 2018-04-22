@@ -10,6 +10,10 @@ a.header {
   justify-content: center;
 }
 
+a.ui.button {
+  display: block;
+  margin: 2px auto;
+}
 .ui.card {
   margin: 5px;
 }

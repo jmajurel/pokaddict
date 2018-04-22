@@ -1,10 +1,12 @@
-head
-  title='Pokaddict'
-  link(rel="stylesheet", href="https://cdn.jsdelivr.net/npm/semantic-ui@2.2.10/dist/semantic.min.css")
-  style
-    include ../../public/styles/style.css
+doctype html
+html
+  head
+    title='Pokaddict'
+    link(rel="stylesheet", href="https://cdn.jsdelivr.net/npm/semantic-ui@2.2.10/dist/semantic.min.css")
+    style
+      include ../../public/styles/style.css
   body
     .ui.menu
-      a(href='/').item Pokaddict
-      a(href=appurl + '/pokemons').item Pokemons
-      a(href=appurl + '/characters').item Characters
+      a.item(href='/') Pokaddict
+      a.item(href='/pokemons') Pokemons
+      a.item(href='/characters') Characters

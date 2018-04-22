@@ -1,0 +1,15 @@
+html
+  include ../includes/head
+  form.ui.form(action="/pokemons" method="POST")
+    .field
+      label Name
+      input(type="text" name="pokemon[name]" placeholder="Name" required)
+    .field
+      label Picture
+      input(type="url" name="pokemon[picture]" placeholder="Picture" required)
+    .field
+      label Type
+      input(type="text" name="pokemon[type]" placeholder="Type" required)
+    button.ui.button(type="submit") Add Pokemon
+
+  include ../includes/footer
