@@ -1,0 +1,45 @@
+.header {
+  text-transform: capitalize;
+}
+.meta {
+  text-transform: capitalize;
+}
+
+.container {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+a.ui.button {
+  display: block;
+  margin: 2px auto;
+}
+.ui.card {
+  margin: 5px;
+}
+
+ul.description {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.card .extra.content i.icon {
+  font-size: 2em;
+}
+
+.card .extra.content {
+  vertical-align: middle;
+}
+
+.card .extra.content form {
+  display: inline;
+}
+
+.card .extra.content form button {
+  margin-top: -2px;
+  border: none;
+  background: none;
+}

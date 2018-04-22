@@ -1,0 +1,15 @@
+html
+  include ../includes/head
+  form.ui.form(action="/pokemons/" + pokemon._id + "?_method=PUT", method="POST")
+    .field
+      label Name
+      input(type="text" name="name" value=pokemon.name required)
+    .field
+      label Picture
+      input(type="url" name="picture" value=pokemon.picture required)
+    .field
+      label Type
+      input(type="text" name="type" value=pokemon.type required)
+    button.ui.button(type="submit") Update Pokemon
+
+  include ../includes/footer

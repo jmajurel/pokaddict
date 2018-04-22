@@ -5,7 +5,7 @@ html
       .image
         img(src=pokemon.picture)
       .content
-        a.header(href=url + pokemon._id)=pokemon.name
+        a.header=pokemon.name
         .meta
           span=pokemon.type
         ul.description
@@ -15,11 +15,11 @@ html
             =pokemon.weakness
           li Height: 
             =pokemon.height
-
-        if pokemon.evolution
-          .extra.content
-            each evol in pokemon.evolution
-              a(href=url + evol.id)
-                =evol.name
-         
+      .extra.content
+        a(href="/pokemons/edit/" + pokemon._id)
+          i.edit.icon
+        form(action="/pokemons/"+pokemon._id+ "_?method=DELETE", method="POST")
+          button(type="submit").right.floated
+            i.trash.alternate.outline.icon
+          
   include ../includes/footer.pug 
