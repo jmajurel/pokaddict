@@ -2,6 +2,7 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var methodOverride = require('method-override');
 var pokemonsRouter = require('./routes/pokemons');
+var charactersRouter = require('./routes/characters');
 
 var app = express();
 
@@ -14,6 +15,7 @@ app.set('view engine', 'pug');
 app.use(bodyParser.urlencoded({extended: false}));
 
 app.use('/pokemons', pokemonsRouter);
+app.use('/characters', charactersRouter);
 
 app.get('/', function(req, res){
   res.render('welcome');

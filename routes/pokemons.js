@@ -4,7 +4,6 @@ var request = require('request');
 var router = express.Router();
 
 const apiurl = 'http://localhost:3000/api/pokemons/';
-const appurl = 'http://localhost:8080/pokemons/';
 
 //Index route
 router.get('/', function(req, res){
@@ -16,7 +15,7 @@ router.get('/', function(req, res){
       } else {
 	response.on('data', function(data){
 	  var pokemons = JSON.parse(data);
-          res.render('./pokemons/index', {pokemons: pokemons, url: appurl});
+          res.render('./pokemons/index', {pokemons: pokemons});
 	});
       }
     })
@@ -74,7 +73,6 @@ router.get('/edit/:id', function(req, res){
 
 //Update route
 router.put('/:id', function(req, res){
-  console.log(req.body);
   request.put({ 
     uri: apiurl + req.params.id,
     form: req.body
@@ -89,6 +87,23 @@ router.put('/:id', function(req, res){
     .on('error', function(error){
       console.log(error);
     });
+});
+
+//Destroy route
+router.delete('/:id', function(req, res){
+  request.delete({
+    uri: apiurl + req.params.id,
+  })
+  .on('response', function(response){
+    if(response.statusCode != 200){
+      console.log("wrong statusCode!");
+    } else {
+      res.redirect("/pokemons");
+    }
+  })
+  .on('error', function(error){
+    console.log(error);
+  });
 });
 
 //Show Route

@@ -43,3 +43,9 @@ ul.description {
   border: none;
   background: none;
 }
+
+form.ui.form {
+  width: 60%;
+  margin: 0 auto;
+  text-align: center;
+}

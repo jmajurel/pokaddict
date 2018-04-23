@@ -10,6 +10,19 @@ html
     .field
       label Type
       input(type="text" name="type" value=pokemon.type required)
+    .field
+      label Ability
+      input(type="text" name="ability" value=pokemon.ability ? pokemon.ability : "")
+    .field
+      label Weakness
+      input(type="text" name="weakness" value=pokemon.weakness ? pokemon.weakness.join(" ") : "")
+    .field
+      label Height
+      input(type="number" name="height" pokemon.height ? value=pokemon.height : null  )
+    .field
+      label Evolutions
+      input(type="text" name="evolutions" value=pokemon.evolutions ? pokemon.evolutions.reduce( (acc, val) => {acc.push(val.name); return acc;}, []).join(" ") : "" )
+
     button.ui.button(type="submit") Update Pokemon
 
   include ../includes/footer
